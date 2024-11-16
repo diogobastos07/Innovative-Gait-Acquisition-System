@@ -1,0 +1,9 @@
+data_cfg:
+  dataset_name: CrowdHuman
+  dataset_input_root: /home/diogo_unix/DATASETS/CrowdHuman/
+  dataset_output_root: /home/diogo_unix/DATASETS/CrowdHuman-processed/
+  num_workers: 1
+
+filtering_cfg:
+  max_occlusion_ratio: 0.7
+  keep_images_without_annotations: false
