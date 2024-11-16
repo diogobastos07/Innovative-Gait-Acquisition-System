@@ -118,7 +118,7 @@ if __name__ == '__main__':
 
     data_cfg = cfg['data_cfg']
     filter_cfg = cfg['filtering_cfg']
-    print('\n------------------------------- ' + data_cfg['dataset_name'] + ' DATASET -------------------------------\n')
+    print('\n------------------------------- CrowdHuman DATASET -------------------------------\n')
     transform(Path(data_cfg['dataset_input_root']), Path(data_cfg['dataset_output_root']), filter_cfg, data_cfg['num_workers'])
-    print('\n-------------------- ' + data_cfg['dataset_name'] + ' DATASET PRETREATMENT COMPLETE! --------------------\n')
+    print('\n-------------------- CrowdHuman DATASET PRETREATMENT COMPLETE! --------------------\n')
     
