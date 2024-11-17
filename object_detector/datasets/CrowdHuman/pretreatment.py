@@ -105,14 +105,20 @@ def transform(base_path: Path, output_path: Path, filter_cfg: dict, workers=1) -
     print(f"| Final number of images in validation set: {num_valid_img}")
     print("-" * 70)
 
-    os.rmdir(os.path.join(output_path, 'intermediate_stage'))    
+    os.rmdir(os.path.join(output_path, 'intermediate_stage')) 
 
+    print('\nUnzipping CrowdHuman_test.zip...')
+    with open(os.path.join(base_path, "CrowdHuman_test.zip"), 'rb') as f:
+        z = zipfile.ZipFile(f)
+        z.extractall(output_path)
+    print(f"Number of images in testing set: {5018}")
+    
 
 
 if __name__ == '__main__':
     # Load config file .yaml
     current_directory = os.path.dirname(os.path.abspath(__file__)) 
-    cfg_path = os.path.join(current_directory, 'config.yaml')
+    cfg_path = os.path.join(current_directory, 'CrowdHuman.yaml')
     print(f"Loading {cfg_path} ...")
     cfg = load_config(cfg_path)
 
@@ -120,5 +126,14 @@ if __name__ == '__main__':
     filter_cfg = cfg['filtering_cfg']
     print('\n------------------------------- CrowdHuman DATASET -------------------------------\n')
     transform(Path(data_cfg['dataset_input_root']), Path(data_cfg['dataset_output_root']), filter_cfg, data_cfg['num_workers'])
+
+    config_directory = os.path.join(os.path.dirname(os.path.dirname(current_directory)), 'config.yaml')
+    with open(config_directory, 'r') as file:
+        config = yaml.safe_load(file)
+    config['path'] = data_cfg['dataset_output_root']
+    with open(config_directory, 'w') as file:
+        yaml.safe_dump(config, file)
+    print(f"\n\'Path\' in {config_directory} was updated to:")
+    print(f"- {data_cfg['dataset_output_root']}")
+
     print('\n-------------------- CrowdHuman DATASET PRETREATMENT COMPLETE! --------------------\n')
-    

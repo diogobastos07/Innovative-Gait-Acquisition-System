@@ -1,0 +1,6 @@
+names:
+  0: person
+path: your_path
+test: images_test
+train: images/Train
+val: images/Validation
