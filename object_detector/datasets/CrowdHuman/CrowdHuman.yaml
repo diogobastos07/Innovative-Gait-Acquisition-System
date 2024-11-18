@@ -5,4 +5,4 @@ data_cfg:
 
 filtering_cfg:
   max_occlusion_ratio: 0.7
-  keep_images_without_annotations: false
+  keep_images_without_annotations: true

@@ -1,0 +1,27 @@
+train_cfg:
+  model: yolo11n.pt
+  data: object_detector/config.yaml
+  epochs: 100
+  patience: 10
+  batch: 16
+  device: 0
+  workers: 8
+  project: object_detector/outputs/train
+  name: yolo11n
+  exist_ok: true
+  single_cls: true
+  plots: true
+
+val_cfg:
+  data: object_detector/config.yaml
+  batch: 16
+  save_json: True
+  conf: 0.4
+  iou: 0.7
+  device: 0
+  plots: true
+  split: val
+  project: object_detector/outputs/evaluation
+  name: yolo11n
+
+

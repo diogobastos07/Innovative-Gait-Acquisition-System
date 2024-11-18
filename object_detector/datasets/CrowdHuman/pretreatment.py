@@ -117,8 +117,7 @@ def transform(base_path: Path, output_path: Path, filter_cfg: dict, workers=1) -
 
 if __name__ == '__main__':
     # Load config file .yaml
-    current_directory = os.path.dirname(os.path.abspath(__file__)) 
-    cfg_path = os.path.join(current_directory, 'CrowdHuman.yaml')
+    cfg_path = os.path.abspath('object_detector/datasets/CrowdHuman/CrowdHuman.yaml')
     print(f"Loading {cfg_path} ...")
     cfg = load_config(cfg_path)
 
@@ -127,7 +126,7 @@ if __name__ == '__main__':
     print('\n------------------------------- CrowdHuman DATASET -------------------------------\n')
     transform(Path(data_cfg['dataset_input_root']), Path(data_cfg['dataset_output_root']), filter_cfg, data_cfg['num_workers'])
 
-    config_directory = os.path.join(os.path.dirname(os.path.dirname(current_directory)), 'config.yaml')
+    config_directory = os.path.abspath('object_detector/config.yaml')
     with open(config_directory, 'r') as file:
         config = yaml.safe_load(file)
     config['path'] = data_cfg['dataset_output_root']
