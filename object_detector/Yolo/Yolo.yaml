@@ -6,7 +6,7 @@ train_cfg:
   batch: 16
   device: 0
   workers: 8
-  project: object_detector/outputs/train
+  project: outputs/object_detector/train
   name: yolo11n
   exist_ok: true
   single_cls: true
@@ -21,7 +21,7 @@ val_cfg:
   device: 0
   plots: true
   split: val
-  project: object_detector/outputs/evaluation
+  project: outputs/object_detector/evaluation
   name: yolo11n
 
 

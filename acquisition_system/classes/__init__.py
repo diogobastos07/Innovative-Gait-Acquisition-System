@@ -1,0 +1,1 @@
+from .sqam import SQAM
