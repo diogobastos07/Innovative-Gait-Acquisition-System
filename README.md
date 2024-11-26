@@ -3,4 +3,13 @@ This repository implements an innovative gait acquisition system with a Sequence
 
 
 ## Getting Started
-Please see [0.get_started.md](docs/0.get_started.md).
+Please see [0.get_started.md](docs/0.get_started.md). The following tutorials are also provided for your reference:
+- [Prepare dataset](docs/1.prepare_dataset.md)
+- [Object detector](docs/2.prepare_object_detector.md)
+- [Acquisition system](docs/3.prepare_acquisition_system.md)
+
+
+## Citation
+```
+Under Publication
+```
