@@ -41,23 +41,23 @@ if __name__ == '__main__':
     cfg = load_config(cfg_path)
 
     # Extract configuration sections
-    geral_cfg = cfg['geral_cfg']
+    general_cfg = cfg['general_cfg']
     track_cfg = cfg['track_cfg']
     sqam_cfg = cfg['sqam_cfg']
 
     # Initialize logging system
     msg_mgr = get_msg_mgr()
-    msg_mgr.init_logger(output_path, geral_cfg['log_to_file'])
+    msg_mgr.init_logger(output_path, general_cfg['log_to_file'])
 
     # Log configuration details
     msg_mgr.log_info(f'Config file loaded from {cfg_path}')
-    msg_mgr.log_info(geral_cfg)
+    msg_mgr.log_info(general_cfg)
     msg_mgr.log_info(track_cfg)
     msg_mgr.log_info(sqam_cfg)
 
     # Load YOLO model and video input
-    model = YOLO(geral_cfg['model_path'])
-    cap = cv2.VideoCapture(geral_cfg['input_video_path'])
+    model = YOLO(general_cfg['model_path'])
+    cap = cv2.VideoCapture(general_cfg['input_video_path'])
 
     # Get video properties
     fps = int(cap.get(cv2.CAP_PROP_FPS))
@@ -66,11 +66,11 @@ if __name__ == '__main__':
     msg_mgr.log_info(f"Video Properties --> \'fps\': {fps}, \'width\': {width}, \'height\': {height}")
 
     # Setup video saving and/or frame display
-    save_video = geral_cfg['save_annotated_video']
-    show_frames = geral_cfg['show_annotated_frames']
+    save_video = general_cfg['save_annotated_video']
+    show_frames = general_cfg['show_annotated_frames']
     if save_video:
         os.makedirs(os.path.join(output_path, 'annotated_video'), exist_ok=True)
-        output_path_video = os.path.join(output_path, 'annotated_video', geral_cfg['name'] + '.mp4')
+        output_path_video = os.path.join(output_path, 'annotated_video', general_cfg['name'] + '.mp4')
         fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         out = cv2.VideoWriter(output_path_video, fourcc, fps, (width, height))
     if save_video or show_frames: 
