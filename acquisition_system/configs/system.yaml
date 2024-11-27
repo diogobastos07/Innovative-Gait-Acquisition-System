@@ -1,4 +1,4 @@
-geral_cfg:
+general_cfg:
   model_path: outputs/object_detector/train/yolo11n/weights/best.pt
   input_video_path: acquisition_system/inputs/853889-hd_1920_1080_25fps.mp4
   name: 853889-hd_1920_1080_25fps
