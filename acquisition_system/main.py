@@ -24,7 +24,7 @@ def draw_in_frame(frame, track_history, boxes, track_ids, confidences):
         
         # Add a label with ID and confidence
         label = f"ID: {track_id}; Conf: {confidence:.2f}"  
-        cv2.putText(frame, label, (x - w // 2, y - h // 2 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1, cv2.LINE_AA)
+        cv2.putText(frame, label, (x - w // 2, y - h // 2 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
         
         # Draw tracking lines for the last points in the history
         if len(track) > 1:

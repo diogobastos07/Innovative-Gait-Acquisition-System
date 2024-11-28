@@ -7,7 +7,7 @@ general_cfg:
   log_to_file: true
 
 track_cfg:
-  tracker: bytetrack.yaml
+  tracker: botsort.yaml
   conf: 0.55
   iou: 0.7
   device: 0
