@@ -23,5 +23,14 @@ Please see [0.get_started.md](docs/0.get_started.md). The following tutorials ar
 
 ## Citation
 ```
-Under Publication
+@article{BASTOS2025126499,
+title = {A scalable gait acquisition and recognition system with angle-enhanced models},
+journal = {Expert Systems with Applications},
+volume = {269},
+pages = {126499},
+year = {2025},
+issn = {0957-4174},
+doi = {https://doi.org/10.1016/j.eswa.2025.126499},
+url = {https://www.sciencedirect.com/science/article/pii/S0957417425001216}
+}
 ```
